@@ -1,0 +1,76 @@
+# create a random list filled with characters H and T
+# for heads and tails. Output the number of Hs & Ts
+# Example output
+# Heads : 46
+# Tails: 54
+
+import random
+
+HeadsTails = []
+
+HorT = {'H': (lambda: ("H")),
+        'T': (lambda: ("T"))
+        }
+
+
+for i in range(100):
+    HotTKeys = random.choice(list(HorT.keys()))
+    HeadsTails.append(HorT[HotTKeys]())
+
+Heads = print("Heads : {}".format(HeadsTails.count('H')))
+Tails = print("Tails : {}".format(HeadsTails.count('T')))
+
+
+#Heads = 0
+#Tails = 0
+
+#for i in HeadsTails:
+#    if i == 'H':
+#        Heads = Heads + 1
+#    elif i == 'T':
+#        Tails = Tails + 1
+
+# print("Heads : {}".format(Heads))
+# print("Tails : {}".format(Tails ))
+
+
+#lambda arg1, arg2, .... : expression use args
+
+
+
+sum = lambda x, y: x + y
+
+#print("Sum :", sum(4, 5))
+
+can_vote = lambda age: True if age >= 18 else False
+
+#print("Can Vote :", can_vote(16))
+#print("Can Vote :", can_vote(18))
+
+powerList = [lambda x: x ** x,
+             lambda x: x + x,
+             lambda x: x ** 4]
+
+#for func in powerList:
+#    print(func(4))
+
+attack = {'quick': (lambda: print("Quick Attack")),
+          'power': (lambda: print("Power Attack")),
+          'miss': (lambda: print("Miss Attack"))
+
+          }
+
+#attack['quick']()
+
+
+
+#print(attack.keys())
+
+#keys() returns an iterable so we convert it into a list
+#random.choice picks a random value from a list
+#attackKey = random.choice(list(attack.keys()))
+#print(attackKey)
+
+#attack[attackKey]()
+
+print(101 % 9)

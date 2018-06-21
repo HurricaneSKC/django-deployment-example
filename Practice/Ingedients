@@ -1,0 +1,41 @@
+# Ingredients
+# Program should take in several ingredients with weights and provide a cost and a selling price
+
+class Food:
+
+    numberoffoods = 0
+
+    def __init__(self, name="", weight=0, unit="", cost=0):
+       self.name = name
+       self.unit = unit
+       self.weight = weight
+       self.cost = cost
+       self.costunit = weight/cost
+
+       Food.numberoffoods += 1
+
+    def unitcost(self):
+       return '{} £{:.2f} per gram'.format(self.name, self.costunit)
+
+    def kg_weight(self):
+        pass
+
+    # function to convert pounds to kilos
+    def Conlbs2Kilos(self):
+        if self.unit == 'lbs':
+            kilos = self.weight * 0.453592
+            return "{:.2f}".format(kilos)
+
+
+
+apples = Food("apple", 1, "kg", 10)
+bananas = Food("banana", 50, "lbs", 12)
+
+print(Food.numberoffoods)
+print(Food.Conlbs2Kilos(bananas))
+
+# attributes
+# methods
+
+
+

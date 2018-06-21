@@ -1,0 +1,10 @@
+import re
+
+theStr = "THE APE WAS AT THE APEX"
+
+for i in re.finditer("APE.", theStr):
+
+    locTuple = i.span()
+
+    print(locTuple)
+
